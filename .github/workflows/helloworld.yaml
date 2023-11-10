@@ -1,0 +1,22 @@
+name: Hello World
+on:
+  push:
+    branches:
+      - sample-solution
+  workflow_dispatch:
+
+jobs:
+  first-job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+      - name: Say hello world
+        shell: bash
+        run: echo "Hello world"
+  second-job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Say good bye
+        shell: bash
+        run: echo "Good bye"
